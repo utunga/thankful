@@ -1,0 +1,21 @@
+{
+  "name": "thankful",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "angular/bower-angular#1.2.2",
+    "json3": "~3.2.4",
+    "jquery": "~2.0.3",
+    "es5-shim": "~2.1.0",
+    "flat-ui-official": "~2.1.1",
+    "font-awesome": "~4.0.3",
+    "angular-resource": "angular/bower-angular-resource#1.2.2",
+    "angular-cookies": "angular/bower-angular-cookies#1.2.2",
+    "angular-route": "angular/bower-angular-route#1.2.2",
+    "angular-ui": "angular-ui/bootstrap-bower",
+    "oauth.io" : "oauth-io/oauth-js"
+  },
+  "devDependencies": {
+    "angular-mocks": "angular/bower-angular-mocks#1.2.2",
+    "angular-scenario": "angular/bower-angular-scenario#1.2.2"
+  }
+}

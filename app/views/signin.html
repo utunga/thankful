@@ -1,0 +1,61 @@
+
+    <div class="row">
+      <div class="col-xs-9">
+        <h3>Sign In</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 signin_buttons">
+
+          <button ng-show="user.twitter" 
+            class="btn btn-twitter">
+            <p>
+              <i class="fa fa-twitter"></i>
+               @{{ user.twitter.screen_name }}
+            </p>
+          </button>
+
+          <button ng-show="!(user.twitter)" ng-click="signinTwitter()" 
+            class="btn btn-twitter">
+            <p>
+              <i class="fa fa-twitter"></i>
+              Sign in with Twitter
+            </p>
+          </button>
+
+          <button ng-show="user.facebook"   
+            class="btn btn-facebook">
+            <p>
+              <i class="fa fa-facebook"></i>
+              {{user.facebook.name}}
+            </p>
+          </button>
+          
+          <button ng-show="!(user.facebook)" ng-click="signinFacebook()"  
+            class="btn btn-facebook">
+            <p>
+              <i class="fa fa-facebook"></i>
+              Sign in with Facebook
+            </p>
+          </button>
+
+      </div>
+   
+      <div class="col-xs-6">
+        
+          <div class="login-form">
+            <div class="form-group">
+              <input type="text" class="form-control login-field" value="" placeholder="your@email"></label>
+            </div>
+
+            <div class="form-group">
+              <input type="password" class="form-control login-field" value="" placeholder="password" id="login-pass">
+              <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+
+            <a class="btn btn-primary btn-lg btn-block" href="#">Sign In</a>
+            <a class="login-link" href="#">Lost your password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
