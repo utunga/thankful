@@ -22,12 +22,13 @@ app.configure(function() {
 	app.use(express.logger('dev')); 					// log every request to the console
 	if (process.env.NODE_ENV == 'production') {	 
 		// note you need to do 'grunt build' to update the /public dir first 
-		app.use(express.static(__dirname + '/public')); 	// set the static files location /public/img will be /img for users
-		console.log("serving static from '"+ __dirname + "/public'");
+		app.use(express.static('public')); 	// set the static files location /public/img will be /img for users
+		console.log("serving static from 'public'");
 	}
 	else {
 		app.use(allowCrossDomain);
-		app.use(express.static(__dirname + '/app')); 
+		app.use(express.static('app')); 
+		console.log("serving static from 'app'");
 	}
 	app.use(express.bodyParser()); 						// pull information from html in POST
 	app.use(express.methodOverride()); 					// simulate DELETE and PUT
