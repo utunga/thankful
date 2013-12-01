@@ -1,0 +1,12 @@
+{
+  "name": "oauth.io",
+  "homepage": "https://github.com/oauth-io/oauth-js",
+  "_release": "868cba5a76",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "868cba5a76571014004aa4182c768ded9c77cc1a"
+  },
+  "_source": "git://github.com/oauth-io/oauth-js.git",
+  "_target": "*"
+}

@@ -1,0 +1,66 @@
+/* $iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png"; */
+
+
+/* Put your CSS here */
+html, body {
+  margin: 20px;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.signin_buttons button {
+    width: 100%;
+    background-image: none; /* flat ui */
+    margin: 0px 0 20px 0;
+}
+
+.thankyou {
+    width:340px;
+    //height:340px;
+    padding:10px;
+}
+
+.thankyou .hero-unit {
+    margin: 20px auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color:rgba(250,250,250, 0.7);
+    border-radius: 6px;
+    padding: 20px;
+    float:left;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
+}

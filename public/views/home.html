@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-xs-9">
+    <h3>Recent acknowledgements</h3>
+  </div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<div id="isotope_container">
+			<div ng-repeat="thankyou in thanks" class="thankyou clearfix" style="background-image: url('data/bg/{{thankyou.image}}')">
+				<div class="hero-unit">
+					<p><b>To</b> <i>{{thankyou.to}}</i></p>
+					<p>{{thankyou.text}}</p>
+					<p style="float:right"> - <i>{{thankyou.from}}</i></p>
+				</div>
+			</div>
+			<div class="thankyou clearfix" style="background-image: url('data/bg/_15.jpg')">
+				<a href="#/post"><div class="hero-unit">
+					<p>&nbsp;</p>
+					<p>And you?</p>
+					<h4>What are you thankful for?</h4>
+				</div></a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<p><a href="http://masonry.desandro.com/">PS I wanted to get this to layout like this..</a>. And I will but getting it working was taking too much time so abandoned for now.</p>
+	</div>
+</div> 
+
+<div class="row">
+	<div class="col-xs-12">
+		<button ng-click="createSampleData()" class="btn btn-warning">Create Sample Data</button>
+	</div>
+</div>
