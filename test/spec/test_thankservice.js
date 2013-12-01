@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: ThankService', function () {
+describe('Controller: ThankYou', function () {
 
   beforeEach(module('thankfulApp'));
 
@@ -13,7 +13,8 @@ describe('Controller: ThankService', function () {
   beforeEach(inject(function($injector) {
     $httpBackend = $injector.get('$httpBackend');
     $httpBackend.when('GET', prefix +'/thanks').respond(testData.thanks);
-
+    var settings = $injector.get('settings');
+    settings.apiHost = "";
   }));
 
   afterEach(function() {
@@ -21,9 +22,9 @@ describe('Controller: ThankService', function () {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('should return the complete list of thanks' , inject(function(thankService) {
+  it('should return the complete list of thanks' , inject(function(ThankYou) {
       $httpBackend.expectGET(prefix + '/thanks');
-      thankService.query({}, function (thanks) {
+      ThankYou.query({}, function (thanks) {
          expect(thanks).toBeDefined();
          expect(thanks[0].to).toEqual(testData.thanks[0].to);
          expect(thanks[1].text).toEqual(testData.thanks[1].text);

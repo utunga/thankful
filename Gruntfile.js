@@ -59,7 +59,7 @@ module.exports = function (grunt) {
     },
     connect: {
       options: {
-        port: 80,
+        port: 8000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'thankful.as',
         livereload: 35729
@@ -253,7 +253,9 @@ module.exports = function (grunt) {
             '.htaccess',
             'bower_components/**/*',
             'images/{,*/}*.{gif,webp}',
-            'styles/fonts/*'
+            'styles/fonts/*',
+            'styles/*',
+            'data/bg/*'
           ]
         }, {
           expand: true,
@@ -294,8 +296,14 @@ module.exports = function (grunt) {
     karma: {
       unit: {
         configFile: 'karma.conf.js',
-        singleRun: true
-      }
+        singleRun: true,
+        browsers: ['Firefox']
+      },
+      e2e: {
+        configFile: 'karma-e2e.conf.js',
+        singleRun: true,
+        browsers: ['Firefox']
+      },
     },
     cdnify: {
       dist: {

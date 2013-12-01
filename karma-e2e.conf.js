@@ -10,15 +10,33 @@ module.exports = function(config) {
     frameworks: ['ng-scenario'],
 
     // list of files / patterns to load in the browser
-    files: [
+   files: [
+      'app/bower_components/angular/angular.js',
+      //'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/angular-resource/angular-resource.js',
+      'app/bower_components/angular-cookies/angular-cookies.js',
+      'app/bower_components/angular-route/angular-route.js',
+      'app/bower_components/angular-ui/ui-bootstrap.js',
+      'app/bower_components/oauth.io/oauth.js',
+      'app/bower_components/flat-ui-official/js/jquery-1.8.3.min.js',
+      'app/bower_components/flat-ui-official/js/jquery-ui-1.10.3.custom.min.js',
+      'app/bower_components/flat-ui-official/js/jquery.ui.touch-punch.min.js',
+      'app/bower_components/flat-ui-official/js/bootstrap.min.js',
+      'app/bower_components/flat-ui-official/js/bootstrap-switch.js', 
+      'app/bower_components/flat-ui-official/js/flatui-checkbox.js',
+      'app/bower_components/flat-ui-official/js/flatui-radio.js',
+      'app/bower_components/flat-ui-official/js/jquery.tagsinput.js',
+      'app/bower_components/flat-ui-official/js/jquery.placeholder.js',
+      'app/scripts/*.js',
+      'app/scripts/**/*.js',
+      //'test/mock/**/*.js',
       'test/e2e/**/*.js'
     ],
-
     // list of files / patterns to exclude
     exclude: [],
 
     // web server port
-    port: 8080,
+    port: 8100,
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
@@ -42,12 +60,12 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: false,
 
-    // Uncomment the following lines if you are using grunt's server to run the tests
-    // proxies: {
-    //   '/': 'http://localhost:9000/'
-    // },
+    // proxy to simpleserver (assumes node simplerserver.js has been started)
+    proxies: {
+      '/': 'http://localhost:8080/'
+    },
     // URL root prevent conflicts with the site root
     // urlRoot: '_karma_'
   });

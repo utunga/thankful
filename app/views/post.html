@@ -1,14 +1,27 @@
+
 <div class="row">
   <div class="col-xs-9">
     <h3>What are you thankful for?</h3>
+    <p><i>Just start typing..</i></p>
   </div>
 </div>
-
 <div class="row">
 	<div class="col-xs-9">
-		<div class="hero-unit xx-large">
-			<h4>To John</h4>
-			<p>Thank you so much for helping me in the garden last weekend</p>
-		</div>
+		<div ng-model="curr" class="thankyou clearfix" 
+			style="background-image: url('data/bg/{{model.image}}')">
+			<div class="hero-unit">
+				<p><b>To</b> <i 
+							 placeholder="@your friend"
+							 contenteditable ng-model="model.to" 
+ 							 strip-br="true" required></i>
+
+				</p>
+			    <p contenteditable ng-model="model.text"
+			       placeholder="Say thanks for something nice they did.." 
+			       strip-br="true" required></p>
+				<p style="float:right;"> - <i>{{model.from}}</i></p>
+			</div>
+		<div>
+		<button class="btn btn-success" ng-click="save()">Save</button>
 	</div>
 </div>
