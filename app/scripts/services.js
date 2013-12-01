@@ -2,7 +2,7 @@ var app = angular.module('thankfulApp') //, ['jqm','ngResource', 'fakeBackEnd'])
 
 app.service("settings", function($rootScope) {
     this.apiVersion = '0.5'; 
-    this.apiHost = ''; //http://localhost:8080';
+    this.apiHost = 'http://localhost:8080';
     this.apiRoot = function() {
     	return this.apiHost + '/api/' + this.apiVersion;
     }

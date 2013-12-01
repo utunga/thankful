@@ -16,12 +16,18 @@
           Post
         </a>
       </li>
+      <li>
+        <a href="#/users">
+          Most Thanked People
+        </a>
+      </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li ng-switch on="loggedIn">
         <span ng-switch-when="true">
-          <button class="btn dropdown-toggle clearfix btn-primary" data-toggle="dropdown">
-            <span class="filter-option pull-left">{{user.name}}</span>&nbsp;
+          <button class="btn dropdown-toggle clearfix btn-primary" 
+             data-toggle="dropdown">
+            <a href="#/signin" class="loggedin_name"><span class="filter-option pull-left">{{user.name}}</span></a>&nbsp;
             <span class="caret"></span>
           </button>
           <span class="dropdown-arrow dropdown-arrow-inverse"></span>

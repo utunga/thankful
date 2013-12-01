@@ -2,16 +2,16 @@
 <div class="row">
   <div class="col-xs-9">
     <h3>What are you thankful for?</h3>
-    <p><i>Just start typing..</i></p>
+    <p><i>Just start typing below..</i></p>
   </div>
 </div>
 <div class="row">
-	<div class="col-xs-9">
+	<div class="col-xs-5">
 		<div ng-model="curr" class="thankyou clearfix" 
 			style="background-image: url('data/bg/{{model.image}}')">
 			<div class="hero-unit">
-				<p><b>To</b> <i 
-							 placeholder="@your friend"
+				<p><b>To</b>&nbsp;@<i 
+							 placeholder="your friend"
 							 contenteditable ng-model="model.to" 
  							 strip-br="true" required></i>
 
@@ -21,7 +21,11 @@
 			       strip-br="true" required></p>
 				<p style="float:right;"> - <i>{{model.from}}</i></p>
 			</div>
-		<div>
+		</div>
+		<a href="" ng-click="nextBackground()">Change the background &gt;&gt;</a>
+		<br/>
 		<button class="btn btn-success" ng-click="save()">Save</button>
 	</div>
-</div>
+	<div class="col-xs-3">
+	</div>
+</div>	

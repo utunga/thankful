@@ -26,8 +26,8 @@ body {
 }
 
 .thankyou .hero-unit {
-    margin: 20px auto;
-    width: 300px;
+    margin: 10px;
+    min-height: 210px;
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
@@ -43,6 +43,9 @@ body {
     letter-spacing: -1px;
 }
 
+.loggedin_name {
+    color:white;
+}
 
 .clearfix:after {
     content: ".";
