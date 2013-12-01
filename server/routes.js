@@ -1,20 +1,18 @@
-var Thank = require('./models/thank');
 var apiVersion = '0.5';
 
-module.exports = function(app) {
+module.exports = function(app, db) {
+
+	var thanks = db.collection('thanks');
+	var users = db.collection('users');
 
 	// api ---------------------------------------------------------------------
 	// get all thankyous
 	app.get('/api/' + apiVersion + '/thanks', function(req, res) {
-
-		// use mongoose to get all thankyous in the database
-		Thank.find(function(err, thanks) {
-
-			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+		thanks.find().toArray(function(err, data) {
 			if (err)
-				res.send(err)
-
-			res.json(thanks); // return all thanks in JSON format
+				res.send(err);
+			else 
+				res.send(data);   
 		});
 	});
 
@@ -22,30 +20,25 @@ module.exports = function(app) {
 	app.post('/api/' + apiVersion + '/thanks', function(req, res) {
 
 		// create a thankyou with req.body info from Angular/ng-resource
-		Thank.create(req.body,
-		    function(err, thank) {
+		thanks.save(req.body, {safe: true}, function(err, records) {
 			if (err)
 				res.send(err);
 			else
-				res.json(thank);	
-			}
-		);
+				res.json(records);	
+		});
 
 	});
 
 
 	// api ---------------------------------------------------------------------
-	// get all thankyous
+	// get all users
 	app.get('/api/' + apiVersion + '/users', function(req, res) {
 
-		// use mongoose to get all users in the database
-		User.find(function(err, users) {
-
-			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+		users.find().toArray(function(err, data) {
 			if (err)
-				res.send(err)
-
-			res.json(users); // return all users in JSON format
+				res.send(err);
+			else 
+				res.send(data);   
 		});
 	});
 
@@ -53,15 +46,12 @@ module.exports = function(app) {
 	app.post('/api/' + apiVersion + '/users', function(req, res) {
 
 		// create a user, information comes from AJAX request from Angular
-		User.create(req.body,
-		function(err, user) {
+		users.save(req.body, {safe: true}, function(err, data) {
 			if (err)
 				res.send(err);
 			else
-				res.json(user);	
-			}
-		);
-
+				res.json(data);	
+		});
 	});
 
 	// // delete a thankyou
@@ -76,18 +66,4 @@ module.exports = function(app) {
 	// 	});
 	// });
 
-
-	// application -------------------------------------------------------------
-	app.get('/', function(req, res) {
-		if (process.env.NODE_ENV == 'production') {
-			console.log("production.. sending '../public/index.html'");
-			res.sendfile('../public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
-
-		}	 
-		else
-		{
-			console.log("not production.. sending '../app/index.html'");
-			res.sendfile('../app/index.html'); 
-		}
-	});
 };

@@ -10,5 +10,6 @@ app.service("settings", function($rootScope) {
 
 // projects service used for projects REST endpoint (dependant on $resource)
 app.factory("ThankYou", function($resource, settings) {
-  return $resource(settings.apiRoot() + '/thanks/:thank_id', {thank_id:'@id'});
+  return $resource(settings.apiRoot() + '/thanks/:thank_id', 
+  	{thank_id:'@id'});
 });
