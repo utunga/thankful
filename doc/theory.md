@@ -1,6 +1,6 @@
+# A system of reciprocity 
 
-
-Contents:
+## Contents:
 
 Introduction
 Acknowledgements
@@ -33,21 +33,20 @@ In the following I assume 'a-priori' the existence of 'tokens' or reserves that 
 ##  Key elements
 
 We imagine a directed, weighted graph with:
-
-A set of  - N
-A set ofreserves - R
-A set ofNodes
- acknowledgements - A
-A set of identities - I
+- A set of  - *N*
+- A set ofreserves - *R*
+- A set of acknowledgements - *A*
+- A set of identities - *I*
 
 A node has one or more identities
-Acknowlegement are edges between /identities
-Reserves are 'at'
-## AcknowledgemenNodes
-ts
+Acknowlegement are edges between identities
+Reserves are 'at' nodes.
+
+## Acknowledgement
  
 An "acknowledgement" is strictly speaking an edge between two identities, though the identities can be thought of as just like labels or names on the .
-An acknowledgement has:Nodes
+
+An acknowledgement has:
 
 - *ig*: the giver (an identity)
 - *ir*: the receiver (an identity)
@@ -72,8 +71,7 @@ An 'identity' is any form of meta data that establishes the identity of the send
 #### Claiming identities
 
 A node is considered to exist as soon as an acknowledgement pointing to it is created (and observed). A node may, in fact never make any signed statements using the identity pointing to it. Such 'unclaimed'  will have only one identity however.
-A recipient node created in this way can be 'claimed' at aNodes
-ny time by the identity by signing a special message establishing identity. 
+A recipient node created in this way can be 'claimed' at any time by the identity by signing a special message establishing identity. 
 
 As noted above neither sender or receiver need to have signed up for any third part apps. That said it is expected that most senders will have interacted with third party apps at some point. Receivers, by contrast, may often be first exposed to the overall concept when they receive their first acknowledgement. 
 
@@ -81,8 +79,7 @@ For instance a post "Thanks so much Joe for helping us move, here's a token to p
 
 #### Merging identities 
 
-Once a node has at least one signed identity that node can be merged with other  by making appropriate, signed public messages indicatig that both identities point to the same node. An identity may aNodes
-lso repudiate another identity (causing a node split). 
+Once a node has at least one signed identity that node can be merged with other  by making appropriate, signed public messages indicatig that both identities point to the same node. An identity may also repudiate another identity (causing a node split). 
 
 The difference between nodes and identities is important because acknowledgements are from/to identities but reserves belong to nodes. 
 
