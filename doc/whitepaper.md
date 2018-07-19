@@ -29,11 +29,11 @@ I am specifically interested in games which allow:
 
 At this point, no claim can be made that games built on top of this framework can achieve these objectives, but these objectives are still noted for the record. 
 
-#### Assumption of 'commodity money'
+#### Regardiong the assumption of 'commodity money'
 
-In the following, I assume 'a-priori' the existence of 'tokens' or reserves that 'hold value'. These tokens could include bitcoin, crypto tokens, pre-authorized credit card transactions, or claims on bank credit, but could also be purely 'fictive' tokens. In the below when I refer to 'hard' currency I mean this to include all specie, M1, and (especially) any widely accepted crypto tokens. I consider these to be 'gold like' or 'commodity based' money.
+In the following, I assume 'a-priori' the existence of 'hard currency' tokens or reserves that 'hold value'. These tokens could include bitcoin, crypto tokens, pre-authorized credit card transactions, or claims on bank credit. 
 
-This may seem contradictory to the objectives above, but for the discussion to proceed it is easier to assume these tokens exist. However, having once we have advanced the discussion to a certain point it should become clear that it would be possible - in certain types of game and if desired - to do away with the value holding tokens in various games and replace these with purely fictive (made up inside of the game) tokens for measurement of value. This is a bit like pulling up the ladder into an airship - at some point it is necessary to demonstrate that airship would be lighter than air - but in this case it is easier, first, to explain how it works while the air ship sitting on top of an existing building.
+For the discussion to proceed it was easier to assume these tokens exist. However, once we have advanced the discussion to a certain point it will become clear that it would also be possible - in certain types of game and only if desired - to do away with such 'hard currency' tokens and still have a valid system for creating credit (entirely 'in game'). This is a bit like pulling up the ladder into an airship. At some point it is indeed necessary to demonstrate that airship can be lighter than air - but in this case it is easier, to explain how it works while the airship is still sitting on the ground.
 
 ####  Key elements
 
