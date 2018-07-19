@@ -1,4 +1,4 @@
-# Good Good Wonderful - A system of reciprocity 
+# KinPesa - A system of reciprocity 
 
 ## Contents:
 
