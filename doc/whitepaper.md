@@ -1,4 +1,4 @@
-# A system of reciprocity 
+# Good Good Wonderful - A system of reciprocity 
 
 ## Contents:
 
