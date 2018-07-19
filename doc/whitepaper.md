@@ -87,7 +87,7 @@ It is expected that most senders will have interacted with third party apps at s
 For instance, a post on social media "thanks so much Joe for helping us move, here's a token to pay it forward" with an associated image and a link for more info on how to claim the token and thus join the game may look like the following:
 ![single acknowledgement image](images/thank_you.jpg) 
 
-A third party site which gathers together all the acknowledgements of this type, would look like this:
+A third party site which gathers together all the acknowledgements of this type, might look like this:
 ![multiple acknowledgements social](images/thankyous_page.jpg)
 
 Third party apps may also play a role 'validating' messages (as discussed below). The extent to which this is possible on messages delivered via existing channels, depends on the amount of meta data allowed in the channel. In some contexts, for some information it may be necessary to use proxy identities or to decorate the meta-data with extra information published elsewhere, as discussed below. 
