@@ -8,10 +8,9 @@
 - Nodes
 - Clearing and default
 - Agents
-- Trust lines and support for vulnerable people
-- Defaults 
+- Trust lines
 - Tokens
-- Regarding virality, incentives and notifications
+- Regarding decentralization
 - Zero circle 
 
 ## Introduction
@@ -89,7 +88,9 @@ That said, it is expected that most senders will have interacted with third part
 
 For instance a post on social media "thanks so much Joe for helping us move, here's a token to pay it forward" with an associated image and a link for more info on how to claim the token and thus join the game. 
 
-As mocked up ![here](images/thank_you.jpg) and ![here](images/thankyous_page.jpg)
+![single acknowledgement image](images/thank_you.jpg) 
+
+![multiple acknowledgements social](images/thankyous_page.jpg)
 
 As discussed below third party apps may also play a role 'validating' messages. The extent to which this is possible to do on messages delivered on existing transports, depends on the amount of met data allowed in the channel. In some contexts, for some information it may be necessary to use proxy identities, as discussed below. 
 
@@ -186,13 +187,15 @@ To encourage reciprocity loops and to make things fun prizes could be awarded fo
 
 As noted below, clearing acknowledgements by circles of reciprocity is rationally advantageous to nodes (and to be preferred over the alternative of default or clearance by payment). For this reason apps would also play a role in notifying users of any opportunities to do this (see below section on notification and reputation).
 
-## Trust lines and support for vulnerable people
+## Trust lines
 
 Vested acknowledgements don't have to be exercized right away. In the case of 'backed' acknoweldgements (only) this creates a 'trust line' essentially giving the recipient node a claim on the reserves of the giving node at any time after that. 
 
 It may appear that it would make sense to immediately exercize any vested acknowledgements. In the case of nodes which you are unlikely to interact with in future - ie strangers - it is unarguably true that the rational choice is to exercize the claim straight away. When used as a form of 'payment' to strangers outside the close support network - for instance if used to purchase bread at the dairy - this would be the expected behavior.
 
-However in the case of others in your close network (neighbors, friends or family) it could be the strictly rational choice to keep an unexercized trustline open. Doing this creates an incentive on the part of the giving node to ensure that the recipient (you) is not going to **need** to exercize their trustline in future. Essentially leaving a trustline open is a form of collective insurance or collective responsiblity against unexpected events. This is similar to the way that the Tiv people of Africa were described (in [Debt: The first 500 years](https://en.wikipedia.org/wiki/Debt:_The_First_5000_Years) as wanting, over the long term, for neighbors to reciprocate on gifts given but at the same never to quite get back to 'zero' thus symbolizing the ongoing existence of a relationship. Rationally speaking, however, a node needs to weigh this dynamic against the 'tragedy of the commons' dynamic that it makes sense to grab your share of the reserves from before another party does the same. It also creates a 'run on the banks' danger which still exists, although in a more diffuse form on such a network. Rational actors may choose to exercize their trust lines simply to reduce leverage in their surrounding network.
+#### Rationality of trust line networks
+
+However, in the case of others in your close network (neighbors, friends or family) it could be the strictly rational choice to keep an unexercized trustline open. Doing this creates an incentive on the part of the giving node to ensure that the recipient (you) is not going to **need** to exercize their trustline in future. Essentially leaving a trustline open is a form of collective insurance or collective responsiblity against unexpected events. This is similar to the way that the Tiv people of Africa were described (in [Debt: The first 500 years](https://en.wikipedia.org/wiki/Debt:_The_First_5000_Years) as wanting, over the long term, for neighbors to reciprocate on gifts given but at the same never to quite get back to 'zero' thus symbolizing the ongoing existence of a relationship. Rationally speaking, however, a node needs to weigh this dynamic against the 'tragedy of the commons' dynamic that it makes sense to grab your share of the reserves from before another party does the same. It also creates a 'run on the banks' danger which still exists, although in a more diffuse form on such a network. Rational actors may choose to exercize their trust lines simply to reduce leverage in their surrounding network.
 
 #### Transitivity of trust lines 
 
@@ -200,13 +203,17 @@ Trustlines should be transitive in the following sense:
 
 When payment is made *outside* of the immediate trust network the expectation is that this would draw down reserves within the reachable trust graph (R') for that node. The exact details of the underlying smart contracts remain to be worked out but it would certainly be possible to set up contracts that allow for the draw down to be made from a range of reserves within the wider reachable reserves (R') without necessarily exhausting the local reserves (R) first. 
 
+#### Support for vulnerable people
+
 Putting aside 'rational' choices (in game theoretic sense) as stated above it is regarded as desirable for games built on this framework to *allow* for the support of vulnerable people (who may or may not be in the kin group of the giver). Perhaps it is only 'irrational' because the game theory is not sufficiently developed, or perhaps this is a true limitation of game theory. Either way it is a goal of this system that games could be built where young people, old people, and generally people unable to maintain reciprocity entirely on their own terms should still be able to be supported. Ideally the interaction with 'money' and credit need not feel so cold/harsh and rigid, while still retaining the value of that money.
 
 One way this could be achieved is simply to extend a trust line to another node without that node doing something that requires acknowledgement first. In this way when the receiving node (the vulenerable person) makes an acknowledgement it potentially draws down from the reachable reserves of the giving node but by the same token, provided their is reciprocity before the vesting date - for instance against other vulnerable persons - the reserves need not be drawn down at all. If a number of people extend a trust line to such persons then their reachable reserves are increased. 
 
 The ability to revoke a trust line and how that might work is not something that has yet been figured out. 
 
-#### Notifications, reputation and 'requests'
+## Notifications, and incentives 
+
+#### Preference to deleverage 
 
 It is in the interest of nodes to preferntially de-leverage their acknowledgements balance sheet (B) ahead of paying down their reserves (R). 
 
@@ -215,6 +222,8 @@ This is because - assuming rational risk analysis by other nodes - reserves act 
 As a result nodes are incentivized to attempt to 'close the loop' and reduce both the leverage of their overall balance sheet (B) and to try and keep the total balance of their balance sheet positive. They can do this in two ways:
 - They can let nodes in their near local network know about opportunities to help each other (and potentially create an acknowledgement loop back into an received acknowledgement already on their balance sheet).
 - The can attempt to receive new acknowledgements which will ultimately be balanced off their outstanding acknowledgements.
+
+#### Notifcations 
 
 For this reason they want to use apps or agents that can find and notify them, preferentially, of any requests for assistance from people who are able to help them build a chain back to the recipient/s of their existing outgoing acknowledgement/s. They also want to notify people in their local network of opportunities that will do the same.
 
@@ -230,7 +239,7 @@ One way to measure the likelihood of (b) is to measure the number of defaults vs
 
 The exact mechanism by which requests for help are shared or by which nodes can 'vouch' for another are outside the scope of this document and considered to be part of the UI of any game that could potentially be built 'on top' of this layer.
  
-## Defaults 
+#### Defaults and reputation
 
 As noted above if an acknowledgement has not been cleared by its vesting date then it is considered a default and removed from the list of 'active' acknowledgements. 
 
@@ -254,16 +263,18 @@ The exact choice of crypto currency is up to the next layer but it may be prefer
 
 It is also to algorithmically enforce a contract based on, for example, a pre-authorized credit card but this would introduce the fragility of having to trust a third party to do this. 
 
-## Regarding virality, incentives and notifications
+## Regarding decentralization
 
 As a goal, even though users can choose which 'app' they use and there is no central store of data, the intention is that the incentive strucure is set up in such a way that the apps do not need to enforce 'good' or prevent 'negative' behaviors that the users of the app may wish to do. That is, it is vital that there should be no incentive for a user install an app with 'cheat codes' because it is in the interest of the players to keep playing the game in a way that is potentially beneficial to other players and/or to install apps that prevent interaction with players or apps that attempt to subvert this paradigm by spam or other methods of attack. 
 
 It is also the intention that the overall system can be viral in nature while still stable in value.
 
-## Zero circle 
+## Zero circle/s
 
 The claim is made that, for every node, provided all transfers of value are included in the network there exists a network distance or rather a network cut beyond which the total of acknowledgements plus reserves transferred in and acknowledgements plus reserves transferred out will not only tend towards zero in the longer term but will stay near zero over time. 
 
 In the same way that gravitational acceleration is due to the total mass within a given volume and irrespective of the details of the distribution of mass within that volume the claim is made that there exists a certain boundary beyond which the details of the internal network are no longer relevant.
 
 The reasoning behind this is that at a certain distance nodes will not consider other nodes to be in their local kinship network so that it makes sense for acknowledgements, or the overall balance sheet in hard currency terms, to be zero across the boundary. 
+
+![zero circle](images/2018_07_19_12_32_05_738.jpg)
