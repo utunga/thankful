@@ -1,4 +1,4 @@
-# Kinpesa - A system of reciprocity 
+# Kinpesa - A system for building reciprocity games
 
 ## Contents:
 
@@ -38,14 +38,16 @@ This may seem contradictory to the objectives above, but for the discussion to p
 ####  Key elements
 
 We imagine a directed, weighted, graph with:
-- A set of nodes - *N*
-- A set of reserves - *R*
-- A set of acknowledgements - *A*
-- A set of identities - *I*
+- **N**: A set of nodes
+- **R**: A set of reserves 
+- **A**: A set of acknowledgements
+- **I**: A set of identities 
+
 
 ![overall](images/2018_07_19_12_33_04_149.jpg)
 
-Other information:
+
+
 - Acknowlegements are edges between identities
 - Identities 'point to' exactly one node
 - A node has one or more identities
@@ -270,7 +272,7 @@ If there were a form of traditional crypto token (traditional in the sense that 
 
 It is also, of course, possibly to algorithmically enforce a contract based on, for example, a pre-authorized credit card or legal contracts. There is nothing strictly preventing kinpesa from being built 'on top' of such currency forms but this would introduce the fragility of having to trust a centralized third party to act as a proxy or potentially wait for humans to act on their legal obligations.
 
-## Regarding decentralization and the interests of the system as a whole
+## Regarding decentralization and the competing interests of the system as a whole vs individuals
 
 As a goal, even though users can choose which 'app' they use and there is no central store of data, the intention is that the incentive strucure is set up in such a way that the apps should not need to enforce 'good' or prevent 'negative' behaviors that the users of the app may wish to do. Specifically every app should act 'in the interests' of the user who installed that app, and not need to (or attempt to) enforce behavior which is good for the network per se, rather than the user. That is, there should be no reason why a user would want to install an app with 'cheat codes'. Potentially this is because other apps will prevent interaction with players or apps that attempt to subvert this paradigm by spam or other methods of attack but better than that would be to design the system so that no such 'cheat codes' exist. That, at least, is the goal.
 
@@ -286,4 +288,14 @@ The reasoning behind this is that at a certain distance nodes will not consider 
 
 ![zero circle](images/2018_07_19_12_32_05_738.jpg)
 
+## Visualization and the 'hard problems'
 
+As stated at the beginning the goal of this document is not to define an actual game or solution per se. Rather it is to create a framework within such games can be thought about. Even once such a game is defined there will still be 'hard problems' to resolve. For example one such hard problem would be the question of what is 'fair' vs 'selfish' in terms of behavior of nodes where such behaviors are allowed within the rules of the game but perhaps not felt to be in the spirit of that game. 
+
+In such cases the suggestion is made that we should be inspired by the creator of reddit (and twitter) who, in both cases, allowed their users to guide and/or solve hard problems and provide simple solutions by voting with their feet or by developing new forms of behavior.
+
+In this domain the two main methods by which users would be able to perform this function would be 
+- by adjusting the behaviors of their agents (particularly, when to accept a 'circle of reciprocity but also in other ways).  
+- by being able to look at visualization of the overall network, perhaps in somewhat anonymized form, so they can see what types of behavior are being developed. 
+
+For this reason, visualizations and user engagement are important parts of any game level solution (as always). 
