@@ -1,4 +1,4 @@
-# KinPesa - A system of reciprocity 
+# Kinpesa - A system of reciprocity 
 
 ## Contents:
 
