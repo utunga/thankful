@@ -49,7 +49,7 @@ We imagine a directed, weighted, graph with:
 - Reserves are 'at' nodes
 - 'Vested acknowledgements' are can also be referred to as 'trust lines' 
 
-![](images/2018_07_19_12_33_04_149.jpg)
+![overall](images/2018_07_19_12_33_04_149.jpg)
 
 ## Acknowledgements
  
@@ -215,7 +215,7 @@ The ability to revoke a trust line and how that might work is not something that
 
 #### Preference to deleverage 
 
-It is in the interest of nodes to preferntially de-leverage their acknowledgements balance sheet (B) ahead of paying down their reserves (R). 
+It is in the interest of nodes to preferentially de-leverage their acknowledgements balance sheet (B) ahead of paying down their reserves (R). 
 
 This is because - assuming rational risk analysis by other nodes - reserves act as 'high powered money' (in the economics sense) and have a multiplier effect on the ability to expand their acknowledgements balance sheet.
 
