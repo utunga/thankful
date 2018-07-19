@@ -267,7 +267,7 @@ It is also to algorithmically enforce a contract based on, for example, a pre-au
 
 As a goal, even though users can choose which 'app' they use and there is no central store of data, the intention is that the incentive strucure is set up in such a way that the apps do not need to enforce 'good' or prevent 'negative' behaviors that the users of the app may wish to do. That is, it is vital that there should be no incentive for a user install an app with 'cheat codes' because it is in the interest of the players to keep playing the game in a way that is potentially beneficial to other players and/or to install apps that prevent interaction with players or apps that attempt to subvert this paradigm by spam or other methods of attack. 
 
-It is also the intention that the overall system can be viral in nature while still stable in value.
+As stated above it is also the intention that the overall system should allow games to built that are viral in nature but still allow for the creation of tokens that are stable in value.
 
 ## Zero circle/s
 
@@ -276,5 +276,7 @@ The claim is made that, for every node, provided all transfers of value are incl
 In the same way that gravitational acceleration is due to the total mass within a given volume and irrespective of the details of the distribution of mass within that volume the claim is made that there exists a certain boundary beyond which the details of the internal network are no longer relevant.
 
 The reasoning behind this is that at a certain distance nodes will not consider other nodes to be in their local kinship network so that it makes sense for acknowledgements, or the overall balance sheet in hard currency terms, to be zero across the boundary. 
+
+If demonstrably true this opens up opportunities for further network analysis.
 
 ![zero circle](images/2018_07_19_12_32_05_738.jpg)
