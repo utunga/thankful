@@ -52,7 +52,7 @@ We imagine a directed, weighted, graph with:
 - Identities 'point to' exactly one node
 - A node has one or more identities
 - Reserves are 'at' nodes
-- 'Vested acknowledgements' are also referred to as 'trust lines' 
+- 'Vested acknowledgements' are also referred to as 'trust lines'  
 
 ## Acknowledgements
  
