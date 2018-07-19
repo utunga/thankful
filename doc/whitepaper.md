@@ -35,8 +35,6 @@ In the following, I assume 'a-priori' the existence of 'tokens' or reserves that
 
 This may seem contradictory to the objectives above, but for the discussion to proceed it is easier to assume these tokens exist. However, having once we have advanced the discussion to a certain point it should become clear that it would be possible - in certain types of game and if desired - to do away with the value holding tokens in various games and replace these with purely fictive (made up inside of the game) tokens for measurement of value. This is a bit like pulling up the ladder into an airship - at some point it is necessary to demonstrate that airship would be lighter than air - but in this case it is easier, first, to explain how it works while the air ship sitting on top of an existing building.
 
-If there were a form of commodity (restricted supply) crypto token that was truly decentralized (no global ledger) then it would be more in keeping with this project to use that as the 'hard curency' store of value on which the kinpesa type money was built. 
-
 ####  Key elements
 
 We imagine a directed, weighted, graph with:
@@ -213,7 +211,7 @@ Ideally, games could be built whereby young people, old people, and generally pe
 
 In the current design trust lines are irrevocable by design. The ability to revoke a trust line and how that might work is something that requires further thought if needed.
 
-## Notifications, and incentives 
+## Notifications and incentives 
 
 #### Preference to de-leverage 
 
@@ -227,60 +225,65 @@ They can do this in two ways:
 - They can let nodes in their near local network know about opportunities to help each other thus potentially creating an acknowledgement loop which will ultimately link back into a 'incoming' acknowledgement already on their balance sheet.
 - They can attempt to create new 'incoming' acknowledgements with nodes that will ultimately form a chain back to their outstanding 'outgoing' acknowledgements.
 
-#### Notifcations 
+Essentially they are looking for opportunites to 'pay back' the benefit they have already received (and acknowledged) before it vests. In the same way, a bank wants to receive deposits before they have to pay down their liabilities from their bank reserves. 
 
-For this reason they want to use apps or agents that can find and notify them, preferentially, of any requests for assistance from people who are able to help them build a chain back to the recipient/s of their existing outgoing acknowledgement/s. They also want to notify people in their local network of opportunities that will do the same.
+#### Notifications 
 
-They might do this by 'vouching' for another party to a third party who knows that party less well than they do.
+For this reason nodes will want to use apps or agents
+- That can find and notify them, preferentially, of requests for assistance or requests to purchase goods from people who are able to help them build a chain back to the recipient/s of their existing outgoing acknowledgement/s. 
+- That can help them connect people in their local network to opportunities that will do the same. They might do this by 'vouching' for another party as to the ability of that party to do a service for another. 
 
-They may also want to simply receive notifications of requests for help where they are able to help (but also where new acknowledgements from the person being helped is likely to lead to circles of reciprocity being created). Essentially they are looking for opportunites to 'pay back' the benefit they have already acknowledged. 
+This is, essentially, a fairly well defined optimization problem for agents to solve. Where all relevant information about people - such as their skill set, their locality their friend network, their reputation etc can all be used to help make relevant recommendations (or notifications) as to who to engage with.
 
-To maximize the chances of a closed loop they want to engage preferentially with nodes that are:
+Specifically, to maximize the chances of a closed loop they probably want to engage preferentially with nodes that are:
 (a) close, in a network sense, to the nodes to which they have outstanding acknowledgement debts
 (b) that are likely themselves to engage with other nodes in a way likely to create further acknowledgements. 
 
-One way to measure the likelihood of (b) is to measure the number of defaults vs the number of closed loops in the history (L) of another node. Essentially this creates a further reputation incentive for nodes to attempt to close their outstanding acknowledgements without default.
+It is notable that such nodes do not necessarily need to be close in a geographic sense, but rather a network sense. Generally speaking, in a small town other people that are geographically close are also 'close' in a network sense. However this is not true in a large town. This is one reason that alternative currency / green dollar type schemes work better in small towns, where geographic boundaries are a good proxy for network proximity but hardly at all in big cities where no such correlation exists. However it is possible, by examining social network data, to get a fairly good direct measure of (real world) social network proximity.
 
-The exact mechanism by which requests for help are shared or by which nodes can 'vouch' for another are outside the scope of this document and considered to be part of the UI of any game that could potentially be built 'on top' of this layer.
+Another piece of data that would be used when trying to optimize such recommendations, is, of course to look at the number of successfully closed closed loops vs defaults in the history (L) of another node. Essentially this creates a further reputation incentive for nodes to attempt to close their outstanding acknowledgements without default. To prevent sybil attacks it may be necessary to only allow reputation to flow only through nodes that the querying node has a direct outgoing connection to.
+
+The exact mechanism by which requests for help are recommended or the way in which they are shared, and/or the mechanism by which nodes can 'vouch' for another are outside the scope of this document.
  
 #### Defaults and reputation
 
-As noted above if an acknowledgement has not been cleared by its vesting date then it is considered a default and removed from the list of 'active' acknowledgements. 
+As noted above if an acknowledgement has not been cleared by its vesting date then it is considered a 'default' and removed from the list of 'active' acknowledgements. 
 
-Default need not be a major problem for the giving node in question. However it will decrease the reputation (in terms of willingness of other nodes to interact with that node).  
+Default need not be a major problem for the giving node in question nor is it such a binary thing. Failure to 'clear' an acknowledgement will undoubtedly decrease the reputation (in terms of willingness of other nodes to interact with that node), however it is also important for resilience of the system that acknowledgements with a very long vesting period, or that have not been cleared after a long period, may be considered basically equivalent to a 'default' for reputation purposes.
 
-It is also important for resilience of the system for acknowledgements that cannot or will not be honoured to be removed from the graph as early as possible. For this reason an acknowledgement with a very long vesting period, that has not been cleared after a long period, may be considered equivalent to a default for reputation purposes.
+For long term resilience of the system it is important acknowledgements that cannot or will not be honoured are removed from consideration in reputation systems.
 
-It would also be possible that acknowledgements dont have a vesting cliff but a vesting schedule so that older acknowledgements are discounted over time. Or equivalently, for reputation purposes older acknowledgements, without a token or with a 'fictive' token, could simply become worth less over time and be less 'high up' in notifications.
+It would also be possible that acknowledgements dont have a vesting cliff per se, but a vesting schedule, In this way older acknowledgements would simply be discounted over time. Equivalently, for reputation purposes, older acknowledgements (such as those without a token or with a 'fictive' token) could simply become worth less and less over time and be less likely to cause recommendations to engage to appear in other people's notifications.
 
 ## Tokens
 
 As already discussed an acknowledgement token can take many forms. Specifically tokens used in acknowledgements can be :
-- 'Hard currency', algorithmically enforced to a block chain
-- 'Hard currency' but not enforced (not backed)
-- 'Fictive' (just known words) and therefore not backed
+- 'Hard currency' algorithmically enforced by a contract a block chain
+- 'Hard currency' but not enforced (not backed) where token used only as a measure of value
+- 'Fictive' (made up words) and not backed, but still potentially valuable in local usage
 - Not present at all. 
 
-I realise its not traditional to use the word 'hard currency' to describe crypto tokens but in the context of this paper they are, for obvious reasons, a lot more 'hard currency' than the graphs of acknowledgements described here. Crypto currency also has the advantage of allowing algorithmic and immediate enforcement of the type of semi-complex logic described here.
+It is fully realized that is is not traditional to use the word 'hard currency' to describe crypto tokens. However in the context of this document it is hoped that the analogy of such tokens to 'hard currency' relative to bank created credit makes such terminology understandable. Crypto tokens also have the advantage of allowing algorithmic and immediate enforcement of the type of logic described above (especially around trust lines).
 
 The exact choice of crypto currency is up to the next layer but it may be preferable to use 'stable coins' or a basket of currencies. 
+If there were a form of traditional crypto token (traditional in the sense that value derives primarily from its restricted supply) that was at the same time truly decentralized (in the sense of no global ledger or an only 'eventually consistent' global ledger) then it would be more in keeping with this project to use that as the 'hard curency' store of value on top of which the kinpesa type network was built. Such crypto tokens may already exist. IOTA, for example looks promising but more research is needed at this point. 
 
-It is also to algorithmically enforce a contract based on, for example, a pre-authorized credit card but this would introduce the fragility of having to trust a third party to do this. 
+It is also, of course, possibly to algorithmically enforce a contract based on, for example, a pre-authorized credit card or legal contracts. There is nothing strictly preventing kinpesa from being built 'on top' of such currency forms but this would introduce the fragility of having to trust a centralized third party to act as a proxy or potentially wait for humans to act on their legal obligations.
 
-## Regarding decentralization
+## Regarding decentralization and the interests of the system as a whole
 
-As a goal, even though users can choose which 'app' they use and there is no central store of data, the intention is that the incentive strucure is set up in such a way that the apps do not need to enforce 'good' or prevent 'negative' behaviors that the users of the app may wish to do. That is, it is vital that there should be no incentive for a user install an app with 'cheat codes' because it is in the interest of the players to keep playing the game in a way that is potentially beneficial to other players and/or to install apps that prevent interaction with players or apps that attempt to subvert this paradigm by spam or other methods of attack. 
+As a goal, even though users can choose which 'app' they use and there is no central store of data, the intention is that the incentive strucure is set up in such a way that the apps should not need to enforce 'good' or prevent 'negative' behaviors that the users of the app may wish to do. Specifically every app should act 'in the interests' of the user who installed that app, and not need to (or attempt to) enforce behavior which is good for the network per se, rather than the user. That is, there should be no reason why a user would want to install an app with 'cheat codes'. Potentially this is because other apps will prevent interaction with players or apps that attempt to subvert this paradigm by spam or other methods of attack but better than that would be to design the system so that no such 'cheat codes' exist. That, at least, is the goal.
 
-As stated above it is also the intention that the overall system should allow games to built that are viral in nature but still allow for the creation of tokens that are stable in value.
+As stated above, it was also the intention that the overall system should allow games to built that are viral in nature but at the same time allow for the creation of tokens that are stable in value. (Sometimes these two things are in conflict).
 
 ## Zero circle/s
 
-The claim is made that, for every node, provided all transfers of value are included in the network there exists a network distance or rather a network cut beyond which the total of acknowledgements plus reserves transferred in and acknowledgements plus reserves transferred out will not only tend towards zero in the longer term but will stay near zero over time. 
+The claim is made that, for every node (provided all transfers of value are included in the network) there exists a network distance or rather a 'network cut' beyond which the total of acknowledgements plus reserves *transferred in* vs the total of acknowledgements plus reserves *transferred out* will not only tend towards zero but will stay near zero over time. 
 
 In the same way that gravitational acceleration is due to the total mass within a given volume and irrespective of the details of the distribution of mass within that volume the claim is made that there exists a certain boundary beyond which the details of the internal network are no longer relevant.
 
-The reasoning behind this is that at a certain distance nodes will not consider other nodes to be in their local kinship network so that it makes sense for acknowledgements, or the overall balance sheet in hard currency terms, to be zero across the boundary. 
-
-If demonstrably true this opens up opportunities for further network analysis.
+The reasoning behind this is that at a certain distance nodes will not consider other nodes to be in their local kinship network so that it makes sense for acknowledgements, or the overall balance sheet in hard currency terms, to zero out (or tend to zero out) across the boundary. If this is demonstrably true for all nodes it opens up opportunities for further network analysis.
 
 ![zero circle](images/2018_07_19_12_32_05_738.jpg)
+
+
