@@ -15,7 +15,7 @@
 
 ## Introduction
 
-This is an attempt to create a framework to model (and simulate) markets with distributed information that allow for the creation of money like instruments (specifically 'credit/debt') without assuming a-priori the existence of centralized credit creating organisations like governments or banks. It also aims to avoid the assumption of any entities having global information.
+This is an attempt to create a framework to model (and simulate) markets with distributed information that allows for the creation of money like instruments (specifically 'credit/debt') without assuming a-priori the existence of centralized credit creating organisations like governments or banks. It also aims to avoid the assumption of any entities having global information.
 
 This is also an attempt to define a general model on which various 'games' can be defined. The optimal outward form (UI and rules) of such 'games' is outside of the scope here, but the objective is that all games of interest could be defined on top of the basic structure described here. 
 
@@ -31,9 +31,11 @@ At this point, no claim can be made that games built on top of this framework ca
 
 #### Assumption of 'commodity money'
 
-In the following I do assume 'a-priori' the existence of 'tokens' or reserves that 'hold value'. These tokens could include bitcoin, crypto tokens, pre-authorized credit card transactions, or claims on bank credit, but could also be purely 'fictive' tokens. In the below when I refer to 'hard' currency I mean this to include all specie, M1, and (especially) any widely accepted crypto tokens. I consider these to be 'gold like' or 'commodity based' money.
+In the following, I assume 'a-priori' the existence of 'tokens' or reserves that 'hold value'. These tokens could include bitcoin, crypto tokens, pre-authorized credit card transactions, or claims on bank credit, but could also be purely 'fictive' tokens. In the below when I refer to 'hard' currency I mean this to include all specie, M1, and (especially) any widely accepted crypto tokens. I consider these to be 'gold like' or 'commodity based' money.
 
-For the discussion to proceed it is easier to assume these to exist a-priori. However, having once we have advanced the discussion to a certain point it should become clear that it would be possible - in certain types of game and if desired - to do away with the value holding tokens in various games and replace these with purely fictive (made up inside of the game) tokens for measurement of value. This is a bit like pulling up the ladder into an airship - at some point it is necessary to demonstrate that airship would be lighter than air - but in this case it is easier, first, to explain how it works while the air ship sitting on top of an existing building.
+This may seem contradictory to the objectives above, but for the discussion to proceed it is easier to assume these tokens exist. However, having once we have advanced the discussion to a certain point it should become clear that it would be possible - in certain types of game and if desired - to do away with the value holding tokens in various games and replace these with purely fictive (made up inside of the game) tokens for measurement of value. This is a bit like pulling up the ladder into an airship - at some point it is necessary to demonstrate that airship would be lighter than air - but in this case it is easier, first, to explain how it works while the air ship sitting on top of an existing building.
+
+If there were a form of commodity (restricted supply) crypto token that was truly decentralized (no global ledger) then it would be more in keeping with this project to use that as the 'hard curency' store of value on which the kinpesa type money was built. 
 
 ####  Key elements
 
@@ -43,62 +45,58 @@ We imagine a directed, weighted, graph with:
 - A set of acknowledgements - *A*
 - A set of identities - *I*
 
+![overall](images/2018_07_19_12_33_04_149.jpg)
+
+Other information:
 - Acknowlegements are edges between identities
 - Identities 'point to' exactly one node
 - A node has one or more identities
 - Reserves are 'at' nodes
-- 'Vested acknowledgements' are can also be referred to as 'trust lines' 
-
-![overall](images/2018_07_19_12_33_04_149.jpg)
+- 'Vested acknowledgements' are also referred to as 'trust lines' 
 
 ## Acknowledgements
  
-An "acknowledgement" is, strictly, an edge between two identities. The identities can be thought of as just labels on the nodes, however, so in some contexts we may refer to acknowledgements between nodes. 
+An "acknowledgement" is, strictly, an edge between two identities. However identities can be thought of as simply labels on nodes, so for ease of expression we may refer to acknowledgements as being between nodes in some cases. 
 
 An acknowledgement has:
 
-- *ig*: the giver (an identity)
-- *ir*: the receiver (an identity)
-- *M*:  a message text (text, image or attachment)
-- *xT*: the acknowledgement amount (x) denominated in token T 
-- *vt*: a vesting time (time)
+- **ig**: the giver (an identity)
+- **ir**: the receiver (an identity)
+- **M**:  a message text (text, image or attachment)
+- **xT**: the acknowledgement amount (x) denominated in token T 
+- **vt**: a vesting time (time)
 
-The last two properties are optional. The message text can be empty if there is an amount specified.
+The last two properties are optional. The message text can be empty if there is an amount specified. To be considered valid, an acknowledgement must be made available via a "post" to some sort of pseudonomous public transport.
 
-To be considered valid an acknowledgement must be made available via a "post" to some sort of pseudonomous public transport.
+The tweet: "Thanks @joe for the help in the garden last tuesday 2h" would be a valid acknowledgement. (Where the h refers to a fictive 'hours' token).
 
-For instance, the tweet: "Thanks @joe for the help in the garden last tuesday 2h" would be a valid acknowledgement. (Where the h refers to a fictive 'hours' token).
+A bitcoin transaction can also modeled as an acknowledgement - as a 'hard currency' acknowledgement with a vesting time of zero, immediately exercized. 
 
-A bitcoin transaction can also modeled as an acknowledgement however - this time a hard currency acknowledgement with a vesting time of zero, that was immediately exercized. 
+Up until the vesting time the acknowledgement is essentially just a 'promise to pay'. In the case of 'hard currency' acknowledgements, after the vesting time the acknowledgement becomes a 'trust line' or a claim on the reserves at that node. A vested acknowledgement can be 'exercised' to transfer tokens to the receiving node or left un-exercized. 
 
-Up until the vesting time the acknowledgement is essentially just a 'promise to pay'. In the case of 'hard currency' tokens, after the vesting time the acknowledgement becomes a 'trust line' or a claim on the reserves at that token. A vested acknowledgement can be 'exercised' to transfer tokens to the receiving node or left un-exercized. 
+The exact meaning of 'default' is discussed in more detail below but as a first approximation if a trust line is exercized and there is not sufficient reserves the acknowledgement is considered to be in default. 
 
-The exact meaning of 'default' is discussed in more below but as a first approximation if a trust line is exercized and there is not sufficient reserves the acknowledgement is considered to be in default. 
+It is also possible - with agreement of all parties in the chain - to formally 'write off' or 'de-leverage' a chain of acknowledgements that form a cycle in the graph (called a 'cirlce of reciprocity' in the below). 
 
-It is also possible - with agreement of all parties in the chain - to formally 'write off' or 'de-leverage' acknowledgements which form a cycle in the graph (called a 'cirlce of reciprocity' before the vesting time. 
+#### Sitting on top of existing distribution channels
 
-It is not necessary for acknowledgement amounts to be revealed to public but they can help guide what types of 'circles of reciprocity' are likely to be accepted.
+To allow this 'game' to be distributed by posts on top of existing public/social media neither the sender nor the receiver need to have signed up with any third party service before they send or receive an acknowledgement. The system is designed so that a claim can be made in plain text and published, which can then trigger actions by trusted third parties, if any. 
 
+It is expected that most senders will have interacted with third party apps at some point. Third party apps can help guide users as to the appropriate formatting of the message and provide other useful services as well. By contrast, it is expected that recipients of acknowledgements may often be first exposed to the concept aka 'introduced to the game' at the time when they receive their first public acknowledgement. 
 
-#### Sitting on top of existing distribution networks
-
-To allow this 'game' to be distributed by posts on top of existing public/social media neither the sender or receiver to have signed up with any third party service before they send or receive an acknowledgement. 
-
-That said, it is expected that most senders will have interacted with third party apps at some point. Third party apps can help guide them to appropriate formatting of the message (and provide other useful services to them as well). By contrast, it is expected that recipients of acknowledgements may often be first exposed to the overall concept/introduced to the 'game' when they receive their first public acknowledgement. 
-
-For instance a post on social media "thanks so much Joe for helping us move, here's a token to pay it forward" with an associated image and a link for more info on how to claim the token and thus join the game. 
-
+For instance, a post on social media "thanks so much Joe for helping us move, here's a token to pay it forward" with an associated image and a link for more info on how to claim the token and thus join the game may look like the following:
 ![single acknowledgement image](images/thank_you.jpg) 
 
+A third party site which gathers together all the acknowledgements of this type, would look like this:
 ![multiple acknowledgements social](images/thankyous_page.jpg)
 
-As discussed below third party apps may also play a role 'validating' messages. The extent to which this is possible to do on messages delivered on existing transports, depends on the amount of met data allowed in the channel. In some contexts, for some information it may be necessary to use proxy identities, as discussed below. 
+Third party apps may also play a role 'validating' messages (as discussed below). The extent to which this is possible on messages delivered via existing channels, depends on the amount of meta data allowed in the channel. In some contexts, for some information it may be necessary to use proxy identities or to decorate the meta-data with extra information published elsewhere, as discussed below. 
 
-However, generally speaking it is critical that neither sender nor receiver need to utilize any centralized third parties, or apps in order to interact with 'games' defined in this way.
+Generally speaking, however, it is critical that neither sender nor receiver strictly *need* to utilize any specific, centralized, third parties to ineteract with the the 'games' defined in this way and can, in theory, interact entirely by signed messages made public on various channels and observed by other agents. 
 
 ##  Identity 
 
-An 'identity' is any form of meta data that establishes the *signing authority* of the **sender** (a post on a public timeline, a public/private key pair) or something which clearly *identifies* the intended **recipient** (for instance referring to a user by their @handle). 
+An 'identity' is any form of meta data that establishes the *signing authority* of the **sender** (a post on a public timeline, a public/private key pair) or something which clearly *identifies* the intended **recipient** (for instance referring to the intended recipient by using their @handle in a message). 
 
 #### Claiming nodes 
 
@@ -114,114 +112,120 @@ One reason that the difference between nodes and identities is important only be
 
 #### Identity proxy 
 
-Acknowledgements can also be sent via private message, or through a third party, but in this case some form of (potentially anonymized) public record must then be made available. For instance, a PM to a private facebook chat another user may also be monitored by a bot invited to that group who would then repost a (possibly pseudo/anonymized) representation of that acknowledgement with a signature proof indicating that the message was from the original sender (or at least that the sender trusted the app to post on their behalf).
+Acknowledgements can also be sent via private message, or through a third party as a proxy. In this case some form of (potentially anonymized) public record must then be made available. For instance, a PM to a private facebook chat may also be monitored by a bot invited into that chat who could then repost a (possibly pseudo/anonymized) representation of that acknowledgement with a signature proof indicating that the message was from the original sender (or at least that the sender trusted the app to post on their behalf).
+
+Identity proxys could also potentially add meta data to decorate a message such as by reading the message text and creating smart contracts on the users behalf, based on that message but using private keys known to the proxy, and then posting on their behalf to (for instance) the ethereum block chain. 
 
 ## Nodes
 
 A node has:
-- *{i}*: 1 .. n identities 
-- *B*: a balance sheet of acknowledgements received and given
-- *R*: a reserve of hard currency tokens 
-- *R'*: a balance sheet of trust lines (vested acknowledgements)
-- *L*: a public history of outstanding, cleared acknowledgements, exercized trust lines and defaults etc.
+- **{i}*: 1 .. n identities 
+- **B**: a balance sheet of acknowledgements received and given
+- **R**: a local reserve of hard currency tokens 
+- **R'**: a balance sheet of trust lines (vested acknowledgements) creating a 'claimable reserve'
+- **L**: a public history of active and cleared acknowledgements, trust lines and any previous defaults etc.
 
-While a node can be pseudonymous it is assumed in this first iteration, that the balance sheets (B) and history (L) are publically visible, by appropriate querying of the public record. "Validated" acknowledgements or trust lines can also be shown to cryptographically control or have access to reserves on the public blockchain/s. This combination of information, combined with other information in the public record allows for reputation and (essentially) credit scores to be built up for nodes by other nodes (or agents acting on behalf of those other nodes).
+While a node can be pseudonymous it is assumed (at this point) that the balance sheets (B) and history (L) are publically available, by appropriate querying of the public record. "Validated" acknowledgements or trust lines can also be observed (by querying the appropriate block chain) and seen to verifably have cryptographically enforced access to reserves or tokens on the public blockchain/s. This combination of information, combined with other information also available about public identities allows for reputation and (essentially) credit scores to be built up for nodes by other nodes (or by agents acting on behalf of those other nodes) querying the public record. 
 
 ## Clearing and default
 
-There are two ways of 'clearing' an acknowledgment. Either a circle of reciprocity can be found and agreed to or the acknowledgement can be cleared by vesting of the claim on the hard currency token (creating a trust line). 
+There are two ways of 'clearing' an acknowledgment. Either (A) a circle of reciprocity can be suggested then agreed to by all parties in that chain or (B) the acknowledgement can be cleared by vesting of the claim on the hard currency token (creating a trust line). 
 
-#### Clearance by payment or vesting
+#### Clearance by vesting (or payment)
 
-If an acknowledgement has a 'hard currency' token and a vesting date the sender is basically making a 'promise to pay' the amount of token specified at the vesting date *or* to find a circle of reciprocity before that date. Otherwise they default.
+If an acknowledgement has a 'hard currency' token and a vesting date the sender is basically making a 'promise to pay' the amount of token specified at the vesting date *or* to find a circle of reciprocity before that date. If not they are considred to be in default.
 
-An acknowledgement is considered to be backed and 'in the money' if the receiver can algorithmically verify the givers ability to pay and they can verify the contract exists which will gaurantee payment of the token is made at time of vesting (vt) - providing only that claimable reserves at the node (R') remain above their acknowledgement amount (x) at that time. 
+An acknowledgement is considered to be 'algorithmically enforced' (aka 'backed') and 'in the money' if the receiver can verify that a contract exists which will gaurantee payment of tokens from the nodes addressable reserves if any such reserves exist at time of vesting (vt). That is that the only conditino under which payment would not be possible is if the claimable reserves at the node (R') are below the acknowledgement amount (x) at that time. Vesting times can, of course, be very short for immediate payment. 
 
-If an acknowledgement is measured in 'hard currency' but not backed algorithmically or if it is not 'in the money' the node is still making a 'promise to pay' but there is less certainty that the node will be able to support the hard currency amount by that vesting date.
+If an acknowledgement is measured in 'hard currency' but not algorithmically enforced, or if it is not 'in the money', the node is still making a 'promise to pay' but there is less certainty that the node will be able to support the hard currency amount by the time of that vesting date and other nodes may act accordingly.
 
-In the case of 'hard currency' promises third party apps may also verify or 'validate' that a contract is 'in the money' and backed by an alogorithmically enforceable contract. They might stamp or validate the message in such a case.
+In the case of 'hard currency' promises third party app can verify or 'validate' that a contract is 'in the money' and may choose to stamp the message as being 'validated' in such a case.
 
-At the time of vesting an algorithmically enforced acknowledgement can be exercized so that the token is transferred into the direct control of the receiver (expanding their direct reserves R) or the acknowledgement can be left unexercized, creating a trust line (and expanding their indirectly claimable reserves R').
-
-This type of clearance is only really possible with algorithmically enforced acknowledgements in 'hard currency'.
+At the time of vesting the corresponding contract can be exercized so that the token is transferred into the direct control of the receiving node (expanding their direct reserves R). Alternatively, the acknowledgement can be left un-exercized, creating a trust line (and expanding their indirectly claimable reserves R'). Clearance by vesting is only possible with algorithmically enforced acknowledgements.
 
 #### Circles of reciprocity 
 
 Any type of acknowledgement can be cleared by the 'circles of reciprocity' method. 
 
-Specifically, if a loop of active acknowledgements is found, having roughly equal value, all of the relevant nodes in that loop are offered the chance to 'write off' acknowledgements they have recieved in return for acknowledgements given.
+Specifically, if a loop of active acknowledgements is found, having roughly equal value, all of the relevant nodes in that loop can be  offered the chance to 'write off' acknowledgements they have recieved in return for having acknowledgements given written off. 
 
-If all parties agree the acknowledgements are 'cleared'. At this time any algorithically enforced contracts no longer have the possiblity to make a claim on reserves. Either way this agreement to 'write off' is noted in the public ledger by signed messages from all parties. 
+That is, if all parties agree the acknowledgements are 'cleared'. Any algorithically enforced contracts will no longer have a potential claim on reserves once all parties in the chain have signed (this was built into the acknowledgement ontract when it was first established of course). Even if not 'algorithmically enforced' the multi-party agreement to 'write off' all related acknowledgements (or partially write them off) is noted in the public ledger by appropriate multi-party signed messages in some observable public ledger.
 
 It is expected that the mechanics of this would often be handled by an automated agent or app acting on behalf of the node, though this is not a requirement.
 
-If an acknowledgement has a 'fictive' token (not backed by hard currency), and a vesting date, the sender is basically making a promise to resolve the circle of reciprocity prior to the vesting date or be in default. 
+If an acknowledgement has a 'fictive' token (not backed by hard currency) and a vesting date, the sender is basically making a 'promise to resolve' by establishing a circle of reciprocity prior to the vesting date, or be considered in default. 
 
-However clearance by 'circle of reciprocity' can also happen with hard currency acknowledgements, whether backed algorithmically or not (or including a mix of the two).
+Clearance by 'circle of reciprocity' can also happen with hard currency acknowledgements, however, whether backed algorithmically or not (or including a mix of the two).
 
-In the case of clearance in this way the acknowledgement amounts (xT) are used *only* as a 'measure of value' and a guide to what types of 'circles of reciprocity' are likely to be accepted by the parties involved. The token acts, in this case, in the same way that a 'roman coin' was used as a standard measure of value on debt contracts in Medieval Europe long after the roman coins themselves had fully passed out of circulation.
+In the case of clearance in this way the acknowledgement amounts (xT) are used *only* as a 'measure of value' and not as a transfer of value. They help provide a guide as to what 'circles of reciprocity' are likely to be accepted by the parties involved. In this case the token acts, in the same way that 'roman coins' were used as a standard measure of value on debt contracts in medieval Europe long after roman coins themselves had fully passed out of circulation.
 
-One example of a 'fictive' tokens would be "hours". In this case the promise to pay is an offer for the giver to do x hours of work. Another forms of fictive token would be 'a bottle of red wine', 'bags of lemons' or 'a ride' etc. A range of different purely arbitrary measures of value could used (or invented) by people as methods of measurement. They would retain meaning and 'value' only because they would need to be cleared by the clearing of reciprocity loops or else do harm to the reputation (ability to have their requests fulfilled) of the giver.
+An example of a 'fictive' tokens would be "hours". In this case the promise to pay is an offer from the giver to do x hours of work. Another forms of fictive token would be 'a bottle of red wine', 'bags of lemons'. A range of different purely arbitrary measures of value could used (or invented) by people as methods of measurement. They would retain meaning and 'value' only in as much as they were cleared through reciprocity loops otherwise you risk the danger of issuance ultimately devaluing such fictive tokens. Such fictive tokens would have no 'global' value only a relative local value amongst nodes who can agree on loops. 
 
-It is not even necessary for there to be any acknowledgement amount (x) or token (T) at all. By examining the text of the messages alone, using NLP techniques or by hand, it would be possible to find loops which nodes (or agents acting on behalf of nodes) may consider likely to be acceptable for closure. For instance a 'saturday sports ride sharing' app might consider all messages acknowledging 'a ride' to be basically equivalent in value and act accordingly (see below around notifications).
+Finally, it is not even necessary for there to be any acknowledgement amount (x) or token (T) at all. By examining the text of the messages alone, using NLP techniques or by hand, it would be possible to find loops which nodes (or agents acting on behalf of nodes) may consider likely to be acceptable for closure. For instance a 'saturday sports ride sharing' app might consider all messages acknowledging 'a ride' to be basically equivalent in value and act accordingly.
 
-It is also possible that the acknowledgement amounts could be selectively revealed only to the agents looking to find loops. (This would be done for psychological reasons, as sometimes people prefer to be discreet about such things)
+At this point the airship has fully detached from the building. Nevertheless the full range of acknowledgement types, and in particular the ability to have acknowledgements which act as 'hard currency' payments when dealing with strangers and simultaneously act as purely fictive loops of locally agreed value is perhaps the most compelling option to consider.
+
+It is also possible that the acknowledgements may have no tokens on their public face but hard currency backed acknowledgement amounts  selectively revealed to agents looking to find loops or only in the case of default. (This would be done for psychological reasons, as sometimes people prefer to be discreet about such things)
 
 #### Liquidity
 
 With circles of reciprocity the idea is that nodes (or agents) would cross off what they consider to be 'roughly equal' acknowledgements. 
 
-Nodes would also have visibility on the entire chain of acknowledgements and nodes involved (with a variable degree of anonymity). In this way they could choose to veto acknowledgement chains incorporating uses of their 'money' that don't align with their values. For instance they may have their agent boycott any acknowledgement chains passing through arms companies, or perhaps through anonymous parties or through nodes which are too highly leveraged. This would decrease liquidity for parties they do not support (and increase liquidity to those they do) even if they are distant to them in economic terms.
+Nodes would have visibility on the entire chain of acknowledgements and nodes involved in such cases (admittedly with a variable degree of anonymity). In this way they could choose to veto the write off of chains incorporating that incorporate uses of their 'money' that don't align with their values. For instance, they may have their agent boycott any acknowledgement chains that pass through arms companies, or perhaps they may choose to allow or not allow anonymous parties to be involved. Or they may choose not to allow liquidity through nodes which they consider too highly leveraged. This would decrease liquidity for parties they do not support (and increase liquidity to those they do) even if they are distantly connected in economic terms.
 
-To increase liquidity - especially in the case of 'unbacked' acknowledgements - it is not regarded as necessary that the acknowledgement amounts (xT) on a circle of reciprocity be of exactly the same value, of the same type, or indeed that there are any kind of token measure at all - as described above. Generally there is liquidity in the fact that people belive in 'swings and roundabouts'.
+To increase liquidity - especially in the case of 'unbacked' acknowledgements - it is not regarded as necessary that the acknowledgement amounts (xT) on a circle of reciprocity be of exactly the same value, or of the same type (or indeed that there are any kind of token measure at all). There is liquidity in the fact that people generally belive in 'swings and roundabouts' - up to a point.
 
-Alternatively, one of the advantages of 'hard currency' contracts, algorithmically enforced, is that unequal amounts can be partially cleared up to the minimum flow across the loop but using exact values thus increasing liquidity, though this potentially can leave 'dust' transactions.
+Alternatively, one of the advantages of 'hard currency' contracts, algorithmically enforced, is that unequal amounts can be partially cleared - up to the minimum flow across the loop. However this may potentially leave 'dust' transactions and create a psychological burden to people keeping track of their balance sheet with many partially cleared acknowledgements.
 
 ## Agents
 
-The usual way to do clearances would be automatically via an 'agent' or 'app' that can make judgements on behalf of the user however the user would have the option to choose what app to trust, and/or to review specific clearance requests. 
+There is quite  lot of psychological burden to reviewing and accepting 'circles of reciprocity'. For this reason it is expected that the usual way to do such clearances would be via an 'agent' or 'app' that can make judgements on behalf of the user. However the user would have the option to configure their app,  review specific clearance requests or even switch to a different agent. 
 
-As a way to fund agents or apps, they could attempt to find loops where all parties are happy to accept the trades on both sides, but there is overall a downward trend, thus allowing the app to insert itself into the chain and pocket the difference. (Essentially a form of arbitrage, but also something that the user of the app may be willing to do)
+As a way to fund such agents or apps, they could attempt to find loops where all parties are happy to accept the trades on both sides, but there is overall a downward trend, thus allowing the app to insert itself into the chain and collect the difference. (Essentially this is a form of arbitrage, or alternatively the user of the app may feel that it is appropriate to pay for the app in this way.) The app acts a little like a proof of stake miner, essentially, charging (and sharing) transaction fees with other relevant agents every time they close a circle of reciprocity. 
 
-To encourage reciprocity loops and to make things fun prizes could be awarded for 'longest chain', 'most geographically distributed', or 'largest value' of loops closed in this way. Perhaps on a leaderboard.
+To encourage reciprocity loops and to make things fun prizes could be awarded for 'longest chain', 'most geographically distributed', or 'largest value' or 'largest number' of loops closed in this way. Perhaps a leaderboard could be created.
 
-As noted below, clearing acknowledgements by circles of reciprocity is rationally advantageous to nodes (and to be preferred over the alternative of default or clearance by payment). For this reason apps would also play a role in notifying users of any opportunities to do this (see below section on notification and reputation).
+As noted below, clearing acknowledgements by circles of reciprocity is rationally advantageous to nodes (and to be preferred over the alternative of default or clearance by payment). For this reason apps would play a role in notifying users of any opportunities to do this (see below section on notification and reputation). In fact this may be the primary function of apps - notification of opportunities to help or sell to others and posting of requests for goods or assistance. See below for more about this. 
+
+While there may be a shared substrate of messages, apps may also choose to focus on specific domains - such as (just as an example) the domain of parents acting as ride share taxis for kids getting to saturday sports. In this example the app may also keep track of things like which kids are in which teams, where the teams are playing and where the kids live. However, importantly, the app can sit alongside or on top of other existing transport mechanisms (such as texts and facebook messenger or whatever). The app is aiming not just to keep track of which kids need to go where, but also to attempt to close as many circles of reciprocity as possible. In this way a family who has given a lot of rids to other kids will be first on the list when they need to ask for a ride. (This is, of course, a trivial example but it demonstrates the basic idea.) 
 
 ## Trust lines
 
-Vested acknowledgements don't have to be exercized right away. In the case of 'backed' acknoweldgements (only) this creates a 'trust line' essentially giving the recipient node a claim on the reserves of the giving node at any time after that. 
+Vested acknowledgements don't have to be exercized right away. This only applies in the case of 'backed' acknoweldgements, but in such case an acknowledgement creates a 'trust line' as soon as it vests - essentially giving the recipient node a claim on the reserves of the giving node at any time after that time. 
 
-It may appear that it would make sense to immediately exercize any vested acknowledgements. In the case of nodes which you are unlikely to interact with in future - ie strangers - it is unarguably true that the rational choice is to exercize the claim straight away. When used as a form of 'payment' to strangers outside the close support network - for instance if used to purchase bread at the dairy - this would be the expected behavior.
-
-#### Rationality of trust line networks
-
-However, in the case of others in your close network (neighbors, friends or family) it could be the strictly rational choice to keep an unexercized trustline open. Doing this creates an incentive on the part of the giving node to ensure that the recipient (you) is not going to **need** to exercize their trustline in future. Essentially leaving a trustline open is a form of collective insurance or collective responsiblity against unexpected events. This is similar to the way that the Tiv people of Africa were described (in [Debt: The first 500 years](https://en.wikipedia.org/wiki/Debt:_The_First_5000_Years) as wanting, over the long term, for neighbors to reciprocate on gifts given but at the same never to quite get back to 'zero' thus symbolizing the ongoing existence of a relationship. Rationally speaking, however, a node needs to weigh this dynamic against the 'tragedy of the commons' dynamic that it makes sense to grab your share of the reserves from before another party does the same. It also creates a 'run on the banks' danger which still exists, although in a more diffuse form on such a network. Rational actors may choose to exercize their trust lines simply to reduce leverage in their surrounding network.
+It may appear that it would make sense to immediately exercize any vested acknowledgements. In the case of nodes which you are unlikely to interact with in future - ie strangers - this is unarguably the rational choice. Furthermore, when used as a form of 'payment' to strangers outside the close support network - for instance if used to purchase something at a shop - this would be the expected behavior.
 
 #### Transitivity of trust lines 
 
-Trustlines should be transitive in the following sense:
+When payment is made *outside* of the immediate trust network the expectation is that this would draw down reserves within the reachable trust graph (R') for that node. Trustlines should be transitive in the sense that the draw down can be made from a range of reserves within the wider reachable reserves (R') without necessarily exhausting the local reserves (R) of the giving node first. (The exact details of the underlying smart contracts would need to reflect this transitivity property.)
 
-When payment is made *outside* of the immediate trust network the expectation is that this would draw down reserves within the reachable trust graph (R') for that node. The exact details of the underlying smart contracts remain to be worked out but it would certainly be possible to set up contracts that allow for the draw down to be made from a range of reserves within the wider reachable reserves (R') without necessarily exhausting the local reserves (R) first. 
+#### Rationality of trust line networks
+
+In the case of others in your local 'trust' network (neighbors, friends or family) it could be a strictly rational choice to keep an unexercized trustline open. Doing this creates an incentive on the part of the giving node to ensure that the recipient (you) is not going to *need* to exercize that trust line in future. Leaving a trustline open is a little like a form of collective insurance or collective responsiblity against unexpected events. This is similar to the way that within the 'gift economies' of the Tiv people in Africa (as described in [Debt: The first 500 years](https://en.wikipedia.org/wiki/Debt:_The_First_5000_Years)) the expectation over the long term, is that neighbors will approximately reciprocate but at the same the conscious choice is made never to quite pay back a gift exactly, thus symbolizing the ongoing existence of the relationship. Rationally speaking, however, a node needs to weigh this dynamic against the 'tragedy of the commons' dynamic where it makes rational sense to grab your share of the reserves from another node before another party does the same. Excessive amounts of open trust lines also creates the danger of a 'run on the banks' dynamic. Although in a more diffuse form than with more centralized banks this still exists on such a network, more so the extent that overlapping trustlines create one giant pool of reserves. Rational actors may therefore choose to exercize their trust lines simply so as to reduce leverage in their local network.
 
 #### Support for vulnerable people
 
-Putting aside 'rational' choices (in game theoretic sense) as stated above it is regarded as desirable for games built on this framework to *allow* for the support of vulnerable people (who may or may not be in the kin group of the giver). Perhaps it is only 'irrational' because the game theory is not sufficiently developed, or perhaps this is a true limitation of game theory. Either way it is a goal of this system that games could be built where young people, old people, and generally people unable to maintain reciprocity entirely on their own terms should still be able to be supported. Ideally the interaction with 'money' and credit need not feel so cold/harsh and rigid, while still retaining the value of that money.
+However, even putting aside such (game theoretical) 'rational' choices one of the goals for this framework (stated above) was to allow games built on top of this framework to *allow* for the support of vulnerable people (who may or may not be in the kin group of the giver). 
 
-One way this could be achieved is simply to extend a trust line to another node without that node doing something that requires acknowledgement first. In this way when the receiving node (the vulenerable person) makes an acknowledgement it potentially draws down from the reachable reserves of the giving node but by the same token, provided their is reciprocity before the vesting date - for instance against other vulnerable persons - the reserves need not be drawn down at all. If a number of people extend a trust line to such persons then their reachable reserves are increased. 
+One way this could be achieved is simply to extend a trust line directly to another node (or person) without that person actually doing anything that requires an acknowledgement first. In this way when the receiving node (the vulnerable person) themselves chooses to pay with an acknowledgement it potentially draws down from the reachable reserves of the original giving node. However, as with any such payment, provided that there is a reciprocity loop before the vesting date - for instance one involving other vulnerable persons - the reserves need not be drawn down at all. If a number of people extend a trust line to such persons then their reachable reserves are increased.
 
-The ability to revoke a trust line and how that might work is not something that has yet been figured out. 
+Ideally, games could be built whereby young people, old people, and generally people unable to maintain reciprocity in their own right  should still be able to be supported and invited to pay back what they can without as the dignity robbing feeling of having to borrow money or be poor. It depends on the design of the game at a UI level but ideally by somewhat blurring the line between 'exact matching' of values and trust lines etc, the interaction with 'money' and credit need not feel so cold, harsh and rigid and yet - critically - still retain the value of that money that makes it able to actually support people.
+
+In the current design trust lines are irrevocable by design. The ability to revoke a trust line and how that might work is something that requires further thought if needed.
 
 ## Notifications, and incentives 
 
-#### Preference to deleverage 
+#### Preference to de-leverage 
 
-It is in the interest of nodes to preferentially de-leverage their acknowledgements balance sheet (B) ahead of paying down their reserves (R). 
+Rationally, it is in the interest of nodes to preferentially de-leverage their acknowledgements balance sheet (B) ahead of paying down acknowledgements from their reserves (R). 
 
 This is because - assuming rational risk analysis by other nodes - reserves act as 'high powered money' (in the economics sense) and have a multiplier effect on the ability to expand their acknowledgements balance sheet.
 
-As a result nodes are incentivized to attempt to 'close the loop' and reduce both the leverage of their overall balance sheet (B) and to try and keep the total balance of their balance sheet positive. They can do this in two ways:
-- They can let nodes in their near local network know about opportunities to help each other (and potentially create an acknowledgement loop back into an received acknowledgement already on their balance sheet).
-- The can attempt to receive new acknowledgements which will ultimately be balanced off their outstanding acknowledgements.
+As a result nodes are incentivized to attempt to 'close the loop' and reduce both the leverage of their overall balance sheet (B) and to try and keep the total balance of their balance sheet positive. 
+
+They can do this in two ways:
+- They can let nodes in their near local network know about opportunities to help each other thus potentially creating an acknowledgement loop which will ultimately link back into a 'incoming' acknowledgement already on their balance sheet.
+- They can attempt to create new 'incoming' acknowledgements with nodes that will ultimately form a chain back to their outstanding 'outgoing' acknowledgements.
 
 #### Notifcations 
 
