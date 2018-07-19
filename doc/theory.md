@@ -11,29 +11,30 @@
 - Trust lines
 - Tokens
 - Regarding decentralization
-- Zero circle 
+- The zero circle 
+- Visualization and the 'hard problems'
 
 ## Introduction
 
 This is an attempt to create a framework to model (and simulate) markets with distributed information that allows for the creation of money like instruments (specifically 'credit/debt') without assuming a-priori the existence of centralized credit creating organisations like governments or banks. It also aims to avoid the assumption of any entities having global information.
 
-This is also an attempt to define a general model on which various 'games' can be defined. The optimal outward form (UI and rules) of such 'games' is outside of the scope here, but the objective is that all games of interest could be defined on top of the basic structure described here. 
+This is also an attempt to define a general model on which various 'games' can be defined. The optimal outward form (UI and rules) of such 'games' is outside of the scope here, but the objective is that all games of interest could be defined on top of the basic structure described. 
 
 I am specifically interested in games which allow:
 - the democratization of credit creation process
 - for credit in the game to (nevertheless) retain value and be robust against shocks or boom/bust cycles
 - for real value to be derived by participants of the game 
 - for the experience of interacting with money/credit to be more gentle, and enjoyable (psychologically speaking)
-- the celebration and acknowledgement of people that contribute to their community 
+- for the celebration and acknowledgement of people that contribute to their community 
 - the support of vulnerable persons that need help
 
 At this point, no claim can be made that games built on top of this framework can achieve these objectives, but these objectives are still noted for the record. 
 
-#### Regardiong the assumption of 'commodity money'
+#### Regarding the assumption of 'commodity money'
 
 In the following, I assume 'a-priori' the existence of 'hard currency' tokens or reserves that 'hold value'. These tokens could include bitcoin, crypto tokens, pre-authorized credit card transactions, or claims on bank credit. 
 
-For the discussion to proceed it was easier to assume these tokens exist. However, once we have advanced the discussion to a certain point it will become clear that it would also be possible - in certain types of game and only if desired - to do away with such 'hard currency' tokens and still have a valid system for creating credit (entirely 'in game'). This is a bit like pulling up the ladder into an airship. At some point it is indeed necessary to demonstrate that airship can be lighter than air - but in this case it is easier, to explain how it works while the airship is still sitting on the ground.
+For the discussion to proceed it is easier to assume these tokens already exist. However, once we have advanced the discussion to a certain point it will become clear that it would also be possible - in certain types of game and only if desired - to do away with such 'hard currency' tokens and still have a valid system for creating credit (i.e. entirely 'in game'). This is a bit like pulling up the ladder into an airship. At some point it is necessary to demonstrate that airship can be lighter than air - but it is easier, to explain how it works while the airship is still on the ground.
 
 ####  Key elements
 
@@ -56,7 +57,7 @@ We imagine a directed, weighted, graph with:
 
 ## Acknowledgements
  
-An "acknowledgement" is, strictly, an edge between two identities. However identities can be thought of as simply labels on nodes, so for ease of expression we may refer to acknowledgements as being between nodes in some cases. 
+An "acknowledgement" is, strictly speaking, an edge between two identities. However, identities can be thought of as simply labels on nodes, so for ease of expression we may refer to acknowledgements as being between nodes in some cases. 
 
 An acknowledgement has:
 
@@ -66,33 +67,33 @@ An acknowledgement has:
 - **xT**: the acknowledgement amount (x) denominated in token T 
 - **vt**: a vesting time (time)
 
-The last two properties are optional. The message text can be empty if there is an amount specified. To be considered valid, an acknowledgement must be made available via a "post" to some sort of pseudonomous public transport.
+The last two properties are optional. The message text (M) can be empty if there is an amount (xT) specified. To be considered valid, an acknowledgement must also be made available via a "post" to some sort of pseudonomous public channel (such as social media).
 
 The tweet: "Thanks @joe for the help in the garden last tuesday 2h" would be a valid acknowledgement. (Where the h refers to a fictive 'hours' token).
 
-A bitcoin transaction can also modeled as an acknowledgement - as a 'hard currency' acknowledgement with a vesting time of zero, immediately exercized. 
+A bitcoin transaction can also be modeled as an acknowledgement - in this case a 'hard currency' acknowledgement with a vesting time of zero, immediately exercized and (generally speaking) an empty message.
 
 Up until the vesting time the acknowledgement is essentially just a 'promise to pay'. In the case of 'hard currency' acknowledgements, after the vesting time the acknowledgement becomes a 'trust line' or a claim on the reserves at that node. A vested acknowledgement can be 'exercised' to transfer tokens to the receiving node or left un-exercized. 
 
 The exact meaning of 'default' is discussed in more detail below but as a first approximation if a trust line is exercized and there is not sufficient reserves the acknowledgement is considered to be in default. 
 
-It is also possible - with agreement of all parties in the chain - to formally 'write off' or 'de-leverage' a chain of acknowledgements that form a cycle in the graph (called a 'cirlce of reciprocity' in the below). 
+It is also possible - with agreement of all parties in the chain - to formally 'write off' or 'de-leverage' a chain of acknowledgements that form a cycle in the graph (this is called a 'circle of reciprocity' in the below). 
 
 #### Sitting on top of existing distribution channels
 
-To allow this 'game' to be distributed by posts on top of existing public/social media neither the sender nor the receiver need to have signed up with any third party service before they send or receive an acknowledgement. The system is designed so that a claim can be made in plain text and published, which can then trigger actions by trusted third parties, if any. 
+To allow this 'game' to be distributed by posts on top of existing public/social media neither the sender nor the receiver need to have signed up with any third party service before they send or receive an acknowledgement. Furthermore the system is designed so that an acknowledgement can be made in plain text and published to normal social media channels, which can then trigger actions by trusted third parties, or identity proxies if need be. 
 
-It is expected that most senders will have interacted with third party apps at some point. Third party apps can help guide users as to the appropriate formatting of the message and provide other useful services as well. By contrast, it is expected that recipients of acknowledgements may often be first exposed to the concept aka 'introduced to the game' at the time when they receive their first public acknowledgement. 
+Despite this, it is expected that most senders will have interacted with third party apps at some point. Third party apps can help guide users as to the 'rules of the game' and appropriate formatting of the message and provide many other useful services as well. However, it is critical both to the decentralization goal, and to allow virality that neither sender nor receiver strictly *need* to utilize any  third parties to make acknowledgements or generally to interact with the 'games' defined in this way. The user should be able to interact entirely by signed messages on public media channels (potentially observed by trusted agents or third party apps). 
 
-For instance, a post on social media "thanks so much Joe for helping us move, here's a token to pay it forward" with an associated image and a link for more info on how to claim the token and thus join the game may look like the following:
+It is expected that recipients of acknowledgements in particular may be first exposed to the concept aka 'introduced to the game' at the time when they receive their first public acknowledgement which therefore needs to be self evident as to its function. 
+
+For instance, a post on social media along the lines of "Hey @Stuart thank you for helping out in the garden last weekend 2h" may (if you add an associated image and a link for context) look like the following:
 ![single acknowledgement image](images/thank_you.jpg) 
 
 A third party site which gathers together all the acknowledgements of this type, might look like this:
 ![multiple acknowledgements social](images/thankyous_page.jpg)
 
-Third party apps may also play a role 'validating' messages (as discussed below). The extent to which this is possible on messages delivered via existing channels, depends on the amount of meta data allowed in the channel. In some contexts, for some information it may be necessary to use proxy identities or to decorate the meta-data with extra information published elsewhere, as discussed below. 
-
-Generally speaking, however, it is critical that neither sender nor receiver strictly *need* to utilize any specific, centralized, third parties to ineteract with the the 'games' defined in this way and can, in theory, interact entirely by signed messages made public on various channels and observed by other agents. 
+Third party apps or agents may choose to monitor messages delivered via public channels in this way and if necessary use their proxied identities to add meta-data or extra information and publish that elsewhere - as discussed below. 
 
 ##  Identity 
 
@@ -112,9 +113,9 @@ One reason that the difference between nodes and identities is important only be
 
 #### Identity proxy 
 
-Acknowledgements can also be sent via private message, or through a third party as a proxy. In this case some form of (potentially anonymized) public record must then be made available. For instance, a PM to a private facebook chat may also be monitored by a bot invited into that chat who could then repost a (possibly pseudo/anonymized) representation of that acknowledgement with a signature proof indicating that the message was from the original sender (or at least that the sender trusted the app to post on their behalf).
+Acknowledgements can also be sent via private message, or through a third party as a proxy. In this case some form of (potentially anonymized) public record must then be made available. For instance, a message to a private facebook chat may be monitored by a bot invited into that chat who could then repost a (possibly pseudo/anonymized) representation of that acknowledgement with a signature proof indicating that the message was from the original sender.
 
-Identity proxys could also potentially add meta data to decorate a message such as by reading the message text and creating smart contracts on the users behalf, based on that message but using private keys known to the proxy, and then posting on their behalf to (for instance) the ethereum block chain. 
+Identity proxies could also potentially add entire contracts by reading the message text and creating smart contracts on the users behalf, configured by the message text to represent the acknowledgement, but using private keys known to the proxy, and then posting on their behalf to (for instance) the ethereum block chain. 
 
 ## Nodes
 
@@ -125,11 +126,11 @@ A node has:
 - **R'**: a balance sheet of trust lines (vested acknowledgements) creating a 'claimable reserve'
 - **L**: a public history of active and cleared acknowledgements, trust lines and any previous defaults etc.
 
-While a node can be pseudonymous it is assumed (at this point) that the balance sheets (B) and history (L) are publically available, by appropriate querying of the public record. "Validated" acknowledgements or trust lines can also be observed (by querying the appropriate block chain) and seen to verifably have cryptographically enforced access to reserves or tokens on the public blockchain/s. This combination of information, combined with other information also available about public identities allows for reputation and (essentially) credit scores to be built up for nodes by other nodes (or by agents acting on behalf of those other nodes) querying the public record. 
+While a node can be pseudonymous it is assumed (at this point) that the balance sheets (B) and history (L) are publically available, by appropriate querying of the public record. Acknowledgements or trust lines can also be observed (by querying the appropriate block chain) and seen to verifably have cryptographically enforced access to reserves or tokens on the public blockchain/s. This combination of information, combined with other information also available about public identities allows for reputation and (essentially) credit scores to be built up for nodes by other nodes (or by agents acting on behalf of those other nodes) querying the public record. 
 
 ## Clearing and default
 
-There are two ways of 'clearing' an acknowledgment. Either (A) a circle of reciprocity can be suggested then agreed to by all parties in that chain or (B) the acknowledgement can be cleared by vesting of the claim on the hard currency token (creating a trust line). 
+There are two ways of 'clearing' an acknowledgment. Either (A) a circle of reciprocity can be suggested and then agreed to by all parties in that chain or (B) the acknowledgement can be cleared by vesting of the claim on the hard currency token (creating a trust line). 
 
 #### Clearance by vesting (or payment)
 
@@ -292,10 +293,10 @@ The reasoning behind this is that at a certain distance nodes will not consider 
 
 As stated at the beginning the goal of this document is not to define an actual game or solution per se. Rather it is to create a framework within such games can be thought about. Even once such a game is defined there will still be 'hard problems' to resolve. For example one such hard problem would be the question of what is 'fair' vs 'selfish' in terms of behavior of nodes where such behaviors are allowed within the rules of the game but perhaps not felt to be in the spirit of that game. 
 
-In such cases the suggestion is made that we should be inspired by the creator of reddit (and twitter) who, in both cases, allowed their users to guide and/or solve hard problems and provide simple solutions by voting with their feet or by developing new forms of behavior.
+In such cases the suggestion is made that we should be inspired by the creators of reddit (and twitter) who, in both cases, allowed their users to guide and/or solve hard problems, provide simple solutions by voting with their feet or by developing new 'manual' solutions and then build solutions around those behaviors.
 
-In this domain the two main methods by which users would be able to perform this function would be 
+In this domain the, two main tools by which users would be able to perform this function would be 
 - by adjusting the behaviors of their agents (particularly, when to accept a 'circle of reciprocity but also in other ways).  
-- by being able to look at visualization of the overall network, perhaps in somewhat anonymized form, so they can see what types of behavior are being developed. 
+- by being able to look at visualizations of the state of the overall network, perhaps in somewhat anonymized form, so they can see what types of behavior are being developed. 
 
-For this reason, visualizations and user engagement are important parts of any game level solution (as always). 
+For this reason, visualizations and user engagement are important parts of any game level solution - as always. 
