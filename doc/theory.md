@@ -16,7 +16,7 @@
 
 ## Introduction
 
-This is an attempt to create a framework to model (and simulate) markets with distributed information that allows for the creation of money like instruments (specifically 'credit/debt') without assuming a-priori the existence of centralized credit creating organisations like governments or banks. It also aims to avoid the assumption of any entities having global information.
+This is an attempt to create a framework to model (and simulate) markets with distributed information that allows for the creation of money like instruments (specifically 'credit/debt') without assuming a-priori the existence of centralized credit creating organisations (like governments or banks) or the existence of a centralized ledger (like most blockchains). That is it aims to avoid the assumption of any entities having global information.
 
 This is also an attempt to define a general model on which various 'games' can be defined. The optimal outward form (UI and rules) of such 'games' is outside of the scope here, but the objective is that all games of interest could be defined on top of the basic structure described. 
 
