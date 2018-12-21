@@ -120,7 +120,7 @@ Identity proxies could also potentially add entire contracts by reading the mess
 ## Nodes
 
 A node has:
-- **{i}*: 1 .. n identities 
+- **{i}**: 1 .. n identities 
 - **B**: a balance sheet of acknowledgements received and given
 - **R**: a local reserve of hard currency tokens 
 - **R'**: a balance sheet of trust lines (vested acknowledgements) creating a 'claimable reserve'
